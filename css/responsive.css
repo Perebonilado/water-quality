@@ -1,0 +1,15 @@
+@media screen and (min-width:769px){
+    
+    #timer-bx{
+        min-width: 40%;
+    }
+
+    #sampling-info-form {
+        width: 50%;
+    }
+
+    #species-info-bx{
+        width: 50%;
+    }
+
+}

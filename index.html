@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Water Quality Checker</title>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/responsive.css">
+</head>
+<body>
+
+    <h1 id="heading">Water Quality Assessment Application</h1>
+    <!-- timer -->
+    <section id="timer-section">
+
+        <div id="timer-bx">
+            <div id="set-timer">
+                <div>
+                    <input type="number" name="" id="minutes" placeholder="min" value="0" min="0">
+                    <div id="colon">:</div>
+                    <input type="number" name="" id="seconds" placeholder="sec" min="0" max="60" value="0">
+                </div>
+                <input type="submit" id="start-timer-btn" value="Start Timer" class="timer-btn">
+            </div>
+            
+            <div id="count-down-bx">
+
+                <div id="min"></div>
+                <div id="colon-2">:</div>
+                <div id="sec">00</div>
+
+            </div>
+            
+            <div class="reset-bx">
+                <input type="submit" id="reset-timer-btn" value="New Timer" class="timer-btn">
+                <input type="submit" id="reset-five-min" value="5 min Reset" class="timer-btn">
+            </div>
+
+        </div>
+
+        <!-- timer end sound -->
+        
+        <audio src="./sounds/bell.mp3" id="bell-sound"></audio>
+
+    </section>
+<!--================ SAMPLE INFO ===================-->
+    <section id="form-section">
+        <form action="" id="sampling-info-form">
+
+            <h1>Sampling Info</h1>
+
+            <label for="site-name">Site Name</label>
+            <input type="text" id="site-name" placeholder="Site name">
+
+            <div class="sample-grouped">
+                <div class="sample-grouped">
+                    <label for="for">Date</label>
+                    <input type="date" id="date">
+                </div>
+
+                <div id="time-taken-bx" class="sample-grouped">
+                    <label for="time-taken">Time Taken</label>
+                    <div>
+                        <input type="text" id="time-taken-min" placeholder="Minutes">
+                        <input type="text" id="time-taken-sec" placeholder="Seconds">
+                    </div>
+                </div>
+            </div>
+
+
+            <label for="habitat">Habitat</label>
+            <input type="text" id="habitat" placeholder="Habitat">
+
+            <label for="observers" class="sample-grouped">Observers</label>
+            <div id='observers'>
+                <div class="observer-input-bx">
+                    <input type="text" placeholder="Observers Name" class="observer">
+                    <div class="delete-observer-bx">
+                        <i class="fal fa-trash-alt delete-observer"></i>
+                    </div>
+                </div>
+            </div>
+                
+
+
+            <input type="button" name="" id="add-observer-btn" value="Add Observer" class="timer-btn">
+        </form>
+    </section>
+
+    <!-- ========= SPECIES INFO ============-->
+
+    <section id="species-info-section">
+        <div id="species-info-bx">
+            <h1>Specimen Order</h1>
+            
+            <div id="select-container">
+                <!-- <div id="select-label-bx">
+                    <h3>Order</h3>
+                    <h3>Abundance</h3>
+                </div> -->
+    
+                <div class="order-select">
+                    <select name="" class="select">
+                        <option value="">Acarina</option>
+                        <option value="">Amphipoda</option>
+                        <option value="">Anaspidacea</option>
+                        <option value="">Anostraca</option>
+                        <option value="">Bivalvia</option>
+                        <option value="">Branchiura</option>
+                        <option value="">Bryozoa</option>
+                        <option value="">Coleoptera</option>
+                        <option value="">Collembola</option>
+                        <option value="">Conchostraca</option>
+                        <option value="">Decapoda</option>
+                        <option value="">Diplopoda</option>
+                        <option value="">Diptera</option>
+                        <option value="">Ephemeroptera</option>
+                        <option value="">Gastropoda</option>
+                        <option value="">Hemiptera</option>
+                        <option value="">Hirudinea</option>
+                        <option value="">Hydrozoa</option>
+                        <option value="">Isopoda</option>
+                        <option value="">Lepidoptera</option>
+                        <option value="">Mecoptera</option>
+                        <option value="">Megaloptera</option>
+                        <option value="">Nematoda</option>
+                        <option value="">Nemertea</option>
+                        <option value="">Neuroptera</option>
+                        <option value="">Nematomorpha</option>
+                        <option value="">Notostraca</option>
+                        <option value="">Odonata</option>
+                        <option value="">Oligochaeta</option>
+                        <option value="">Plecoptera</option>
+                        <option value="">Porifera</option>
+                        <option value="">Trichoptera</option>
+                        <option value="">Turbellaria</option>
+                    </select>
+        
+                    <select name="" class="select-abundance">
+                        <option value="">1(+)</option>
+                        <option value="">2 to 10(++)</option>
+                        <option value="">>11-100(+++)</option>
+                        <option value="">>100(++++)</option>
+                        <option value="">>1000(+++++)</option>
+                    </select>
+
+                    <div id="delete-animal">
+                        <i class="fal fa-trash-alt delete-animal"></i>
+                    </div>
+                </div>
+
+            </div>
+
+            <input type="button" class="timer-btn" value="Add Species" id="add-species-btn">
+            <input type="button" class="timer-btn" value="Identify Species" id="identify-species">
+            <input type="button" class="timer-btn" value="Submit" id="calculate-signal">
+        </div>
+
+    </section>
+
+    <section id="result-body">
+
+        <div id="result-bx">
+            <div id="result-heading-bx">
+                <div class="result-head-item" id="table-site-name">Site Name: Lorem, ipsum dolor.</div> 
+                <div class="result-head-item" id="table-site-date">Date: Lorem, ipsum dolor.</div> 
+                <div class="result-head-item" id="table-site-habitat">Habitat</div> 
+                <div class="result-head-item" id="table-site-time">Time taken</div> 
+                <div class="result-head-item bb p-l" id="table-site-observer">Observers</div> 
+            </div>
+            <div id="result-inputs">
+                <div id="result-input-head-bx">
+                    <div class="center bold-text">Order</div>
+                    <div class="center bold-text">Abundance</div>
+                </div>
+
+                <!-- results -->
+                <div class="result-vals center">
+                    <div id="order-name"></div>
+                    <div id="res-val"></div>
+                </div>
+
+            </div>
+
+            <!-- Summary -->
+            <p id="summary">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cupiditate eius odit non?
+            </p>
+        </div>
+
+    </section>
+
+    <section id="key-section">
+        <div id="close-key-bx"><i class="fas fa-window-close" id="close-key-icon"></i></div>
+        <img src="./slides/slide-1.png" alt="" id="key-image">
+    </section>
+
+
+    <script src="./js/app.js"></script>
+    <script src="./js/sampling-form.js"></script>
+    <!-- <script src="./js/keyform.js"></script> -->
+</body>
+</html>
